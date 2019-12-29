@@ -518,9 +518,9 @@ begin
   where id = 3;
   dbms_output.put_line(v_emp.name || ',' || v_emp.jobsalary);
 end;
-/*
-我们刚说，%rowtype就描述的是一个对象类型，但是它仅仅描述的是一张表中的行对象类型。
-如果，我们查询的数据来自多张表中的多个列。我们可以为每个列定义变量用于接值。如：
+
+-- 我们刚说，%rowtype就描述的是一个对象类型，但是它仅仅描述的是一张表中的行对象类型。
+-- 如果，我们查询的数据来自多张表中的多个列。我们可以为每个列定义变量用于接值。如：
 declare
  v_empname t_emp.name%type;
  v_empage t_emp.age%type;
@@ -531,7 +531,7 @@ begin
   from t_emp,t_dept
   where t_emp.deptid = t_dept.id and t_emp.id = 2;
 end;
-以上的PL/SQL语句中定义的变量，我们也可以对其进行包装成一个类型。
+-- 以上的PL/SQL语句中定义的变量，我们也可以对其进行包装成一个类型。
 declare
  type empdept is record(
   v_empname t_emp.name%type,
@@ -546,7 +546,7 @@ begin
   from t_emp,t_dept
   where t_emp.deptid = t_dept.id and t_emp.id = 2;
 end;
-*/
+
 --简单演示：
 declare
   type temp_emp is record(
